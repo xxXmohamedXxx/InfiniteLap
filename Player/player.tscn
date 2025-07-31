@@ -15,7 +15,7 @@ fill_to = Vector2(0.53211, 1)
 radius = 12.0
 height = 40.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_nfwjr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -27,3 +27,5 @@ texture = SubResource("GradientTexture2D_8p01d")
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_cu3of")
 debug_color = Color(0, 0.595, 0.7, 0.168627)
+
+[node name="Camera2D" type="Camera2D" parent="."]

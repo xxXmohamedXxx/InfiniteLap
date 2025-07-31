@@ -1,11 +1,12 @@
 extends CharacterBody2D  # Godot 4
 
 var speed := 0.0
-var max_speed := 200.0
-var accel := 600.0
-var friction := 500.0
+var max_speed := 300.0
+var accel := 300.0
+var friction := 300.0
 var turn_speed := 3.0
 var health = 100
+
 func _physics_process(delta):
 	# Accelerate forward/back
 	if Input.is_action_pressed("Forward"):
