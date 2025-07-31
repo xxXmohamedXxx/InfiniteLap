@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://tybfd5iph5l8"]
 
-[ext_resource type="Script" path="res://Player/player.gd" id="1_nfwjr"]
+[ext_resource type="Script" uid="uid://x55dagi04q13" path="res://Player/player.gd" id="1_nfwjr"]
 
 [sub_resource type="Gradient" id="Gradient_xnkwx"]
 offsets = PackedFloat32Array(0, 0.194805, 0.272727, 0.62987, 0.727273, 1)
@@ -29,3 +29,4 @@ shape = SubResource("CapsuleShape2D_cu3of")
 debug_color = Color(0, 0.595, 0.7, 0.168627)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.25, 0.25)

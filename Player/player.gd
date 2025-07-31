@@ -5,9 +5,10 @@ var max_speed := 300.0
 var accel := 300.0
 var friction := 300.0
 var turn_speed := 3.0
-var health = 100
+var health = 20
 
 func _physics_process(delta):
+	gameover()
 	# Accelerate forward/back
 	if Input.is_action_pressed("Forward"):
 		speed += accel * delta
@@ -21,7 +22,7 @@ func _physics_process(delta):
 			speed = min(speed + friction * delta, 0)
 
 	speed = clamp(speed, -max_speed, max_speed)
-	print(speed)
+	#print(speed)
 	# Rotate left/right
 	if Input.is_action_pressed("Left") and (speed > 50 or speed < -50):
 		rotation -= turn_speed * delta
@@ -45,3 +46,7 @@ func _physics_process(delta):
 				rotation = lerp_angle(rotation, target_angle, 0.2)
 				break
 	move_and_slide()
+
+func gameover():
+	if health <= 0:
+		queue_free()
