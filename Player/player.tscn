@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://tybfd5iph5l8"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_nfwjr"]
+
+[sub_resource type="Gradient" id="Gradient_xnkwx"]
+offsets = PackedFloat32Array(0, 0.194805, 0.272727, 0.62987, 0.727273, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.324675, 0.324675, 0.324675, 1, 0.94, 0.94, 1, 1, 0.818182, 0.818182, 0.818182, 1, 0, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8p01d"]
+gradient = SubResource("Gradient_xnkwx")
+fill_from = Vector2(0.527523, 0)
+fill_to = Vector2(0.53211, 1)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cu3of"]
+radius = 12.0
+height = 40.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_nfwjr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.375, 0.625)
+texture = SubResource("GradientTexture2D_8p01d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_cu3of")
+debug_color = Color(0, 0.595, 0.7, 0.168627)
