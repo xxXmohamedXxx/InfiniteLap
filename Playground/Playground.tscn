@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cv0we8mvhlxnt"]
+[gd_scene load_steps=4 format=3 uid="uid://cv0we8mvhlxnt"]
 
 [ext_resource type="PackedScene" uid="uid://tybfd5iph5l8" path="res://Player/player.tscn" id="1_qvws0"]
 [ext_resource type="Texture2D" uid="uid://b66tisfwwfdbd" path="res://icon.svg" id="2_k1e61"]
+[ext_resource type="PackedScene" uid="uid://w0ojjlpelfq4" path="res://Danger/Obstacle.tscn" id="3_cd328"]
 
 [node name="Playground" type="Node2D"]
 
@@ -22,8 +23,19 @@ position = Vector2(427, -96)
 texture = ExtResource("2_k1e61")
 
 [node name="Icon5" type="Sprite2D" parent="."]
-position = Vector2(14, 265)
+position = Vector2(-409, 93)
 texture = ExtResource("2_k1e61")
 
 [node name="Player" parent="." instance=ExtResource("1_qvws0")]
-position = Vector2(204, 92)
+position = Vector2(301, 118)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(828, -316, 813, 472, -497, 498, -628, -246, 707, -326, 929, -389, -858, -345, -569, 880, 1231, 568)
+
+[node name="Obstacle" parent="." instance=ExtResource("3_cd328")]
+position = Vector2(157, 251)
+
+[node name="Obstacle2" parent="." instance=ExtResource("3_cd328")]
+position = Vector2(-42, -11)

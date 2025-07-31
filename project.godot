@@ -12,14 +12,14 @@ config_version=5
 
 config/name="InfiniteLap"
 run/main_scene="res://Playground/Playground.tscn"
-config/features=PackedStringArray("4.3", "Mobile")
+config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
 [display]
 
 window/size/viewport_width=320
 window/size/viewport_height=180
-window/size/mode=3
+window/size/mode=2
 window/stretch/mode="viewport"
 
 [global_group]
