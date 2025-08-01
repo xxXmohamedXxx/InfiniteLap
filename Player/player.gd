@@ -1,4 +1,5 @@
 extends CharacterBody2D  # Godot 4
+class_name  Player
 
 var speed := 0.0
 var max_speed := 300.0
