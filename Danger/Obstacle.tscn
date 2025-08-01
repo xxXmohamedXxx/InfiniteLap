@@ -1,13 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://w0ojjlpelfq4"]
+[gd_scene load_steps=2 format=3 uid="uid://w0ojjlpelfq4"]
 
 [ext_resource type="Script" path="res://Danger/obstacle.gd" id="1_ledpl"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kwtv"]
-
 [node name="Obstacle" type="Area2D"]
 script = ExtResource("1_ledpl")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_4kwtv")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

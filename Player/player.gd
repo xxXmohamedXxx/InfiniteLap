@@ -5,7 +5,7 @@ extends CharacterBody2D  # Godot 4
 @onready var timer = $Timer
 @onready var healthbar = $CanvasLayer/Health
 
-var speed := 300.0  # constant target speed
+var speed := 200.0  # constant target speed
 var accel := 600.0
 var turn_speed := 3.0
 var friction := 600.0
@@ -24,16 +24,16 @@ func _physics_process(delta):
 	
 	label.text = str(velocity.normalized())
 	if velocity_len > 250:
-		camera_2d.zoom = camera_2d.zoom.move_toward(Vector2(0.7, 0.7), delta/5)
+		camera_2d.zoom = camera_2d.zoom.move_toward(Vector2(0.8, 0.8), delta/5)
 		camera_2d.offset = camera_2d.offset.lerp(velocity.normalized()*250, delta/3)
 	elif velocity_len > 150:
-		camera_2d.zoom = camera_2d.zoom.move_toward(Vector2(0.8, 0.8), delta/5)
+		camera_2d.zoom = camera_2d.zoom.move_toward(Vector2(0.9, 0.9), delta/5)
 		camera_2d.offset = camera_2d.offset.lerp(velocity.normalized()*160, delta/3)
 	elif velocity_len > 50:
-		camera_2d.zoom = camera_2d.zoom.move_toward(Vector2(0.9, 0.9), delta/5)
+		camera_2d.zoom = camera_2d.zoom.move_toward(Vector2(1,1), delta/5)
 		camera_2d.offset = camera_2d.offset.lerp(velocity.normalized()*70, delta/3)
 	else:
-		camera_2d.zoom = camera_2d.zoom.move_toward(Vector2(1, 1), delta/5)
+		camera_2d.zoom = camera_2d.zoom.move_toward(Vector2(1.3, 1.3), delta/5)
 		camera_2d.offset = camera_2d.offset.lerp(Vector2.ZERO, delta)
 	#
 	# Handle rotation
@@ -61,7 +61,7 @@ func _physics_process(delta):
 	if moving:
 		var effective_accel = accel
 		if Input.is_action_pressed("Left") or Input.is_action_pressed("Right"):
-			effective_accel *= 8.0 # turn boost
+			effective_accel *= 4.0 # turn boost
 		velocity = velocity.move_toward(target_velocity, effective_accel * delta)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)

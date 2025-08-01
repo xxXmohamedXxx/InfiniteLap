@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=360
+window/size/viewport_width=960
+window/size/viewport_height=540
 window/size/mode=2
 window/stretch/mode="viewport"
 
@@ -67,3 +67,4 @@ Shift={
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0.305882, 0.4, 0.705882, 1)

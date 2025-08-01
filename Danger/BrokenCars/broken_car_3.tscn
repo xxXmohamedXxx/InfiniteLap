@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwtdp8akfu2a8"]
+
+[ext_resource type="Texture2D" uid="uid://cxf8ts3ack3nk" path="res://Playground/Assets/broken.png" id="1_1y0cn"]
+[ext_resource type="PackedScene" uid="uid://w0ojjlpelfq4" path="res://Danger/Obstacle.tscn" id="2_pbvid"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_avmft"]
+height = 32.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdra1"]
+size = Vector2(20, 41.2903)
+
+[node name="BrokenCar3" type="Sprite2D"]
+texture = ExtResource("1_1y0cn")
+region_enabled = true
+region_rect = Rect2(58.2165, 44.6264, 60.1447, 32.3856)
+
+[node name="Obstacle" parent="." instance=ExtResource("2_pbvid")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle"]
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_avmft")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+rotation = 1.57079
+scale = Vector2(0.75, 0.775)
+shape = SubResource("RectangleShape2D_kdra1")
