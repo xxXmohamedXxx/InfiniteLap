@@ -1,15 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://tybfd5iph5l8"]
+[gd_scene load_steps=4 format=3 uid="uid://tybfd5iph5l8"]
 
-[ext_resource type="Script" uid="uid://x55dagi04q13" path="res://Player/player.gd" id="1_nfwjr"]
-
-[sub_resource type="Gradient" id="Gradient_xnkwx"]
-offsets = PackedFloat32Array(0, 0.194805, 0.272727, 0.62987, 0.727273, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.324675, 0.324675, 0.324675, 1, 0.94, 0.94, 1, 1, 0.818182, 0.818182, 0.818182, 1, 0, 0, 0, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_8p01d"]
-gradient = SubResource("Gradient_xnkwx")
-fill_from = Vector2(0.527523, 0)
-fill_to = Vector2(0.53211, 1)
+[ext_resource type="Script" path="res://Player/player.gd" id="1_nfwjr"]
+[ext_resource type="Texture2D" uid="uid://o13uydf1lrx5" path="res://Player/Car.png" id="2_jri7j"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cu3of"]
 radius = 12.0
@@ -19,9 +11,9 @@ height = 40.0
 script = ExtResource("1_nfwjr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.8, 0, 0, 1)
 rotation = 1.5708
-scale = Vector2(0.375, 0.625)
-texture = SubResource("GradientTexture2D_8p01d")
+texture = ExtResource("2_jri7j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -29,4 +21,18 @@ shape = SubResource("CapsuleShape2D_cu3of")
 debug_color = Color(0, 0.595, 0.7, 0.168627)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.25, 0.25)
+position_smoothing_speed = 1.44
+
+[node name="Label" type="Label" parent="."]
+offset_right = 190.0
+offset_bottom = 152.0
+scale = Vector2(0.293161, 0.293161)
+theme_override_font_sizes/font_size = 111
+text = "222"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="oil_affected" from="." to="." method="_on_oil_affected"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
