@@ -3,12 +3,19 @@ extends CharacterBody2D  # Godot 4
 @onready var camera_2d = $Camera2D
 @onready var label = $Label
 @onready var timer = $Timer
+@onready var healthbar = $CanvasLayer/Health
 
 var speed := 300.0  # constant target speed
-var accel := 100.0
+var accel := 600.0
 var turn_speed := 3.0
-var friction := 400.0
-var health = 20
+var friction := 600.0
+var health = 100:
+	set(value):
+		health = value
+		healthbar.value = health
+		if health <= 0:
+			gameover()
+var status = []
 signal oil_affected
 func _physics_process(delta):
 	# Show velocity in label
@@ -83,12 +90,14 @@ func gameover():
 
 
 func _on_timer_timeout():
+	status.erase("slippery")
 	accel = 100.0
 	friction = 400.0
 	turn_speed = 3.0
 
 
 func _on_oil_affected():
+	status.append("slippery")
 	accel = 50
 	friction = 50
 	turn_speed = 1.5

@@ -24,6 +24,7 @@ debug_color = Color(0, 0.595, 0.7, 0.168627)
 position_smoothing_speed = 1.44
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_right = 190.0
 offset_bottom = 152.0
 scale = Vector2(0.293161, 0.293161)
@@ -33,6 +34,24 @@ text = "222"
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
 one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 54.0
+offset_top = -1.0
+offset_right = 411.0
+offset_bottom = 151.0
+scale = Vector2(0.154802, 0.154802)
+theme_override_font_sizes/font_size = 111
+text = "Health"
+
+[node name="Health" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 25.0
+offset_top = 23.0
+offset_right = 145.0
+offset_bottom = 50.0
+value = 100.0
 
 [connection signal="oil_affected" from="." to="." method="_on_oil_affected"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

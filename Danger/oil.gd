@@ -7,4 +7,4 @@ func _on_body_entered(body):
 		body.oil_affected.emit()
 
 func _on_body_exited(body):
-	$Sprite2D.queue_free()
+	queue_free()
