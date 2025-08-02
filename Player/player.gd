@@ -10,6 +10,7 @@ var accel := 600.0
 var turn_speed := 3.0
 var friction := 600.0
 var health = 100:
+
 	set(value):
 		health = value
 		healthbar.value = health
@@ -18,6 +19,10 @@ var health = 100:
 var status = []
 signal oil_affected
 func _physics_process(delta):
+ 
+	$CanvasLayer/lap_label.text = var_to_str(Main.lap)
+	
+	
 	# Show velocity in label
 	# Camera zoom based on velocity length
 	var velocity_len = velocity.length()
@@ -102,3 +107,10 @@ func _on_oil_affected():
 	friction = 50
 	turn_speed = 1.5
 	timer.start()
+
+
+
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("obstacle"):
+		health-=5

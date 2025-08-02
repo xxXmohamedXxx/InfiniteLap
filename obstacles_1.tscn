@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://b05ftfk66dai8"]
+
+[ext_resource type="Texture2D" uid="uid://cvvrqa7ivw25i" path="res://tileset3.png" id="1_vyy7x"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_736ch"]
+texture = ExtResource("1_vyy7x")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_lknnf"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_736ch")
+
+[node name="obstacles" type="TileMapLayer" groups=["obstacle"]]
+tile_set = SubResource("TileSet_lknnf")

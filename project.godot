@@ -12,8 +12,12 @@ config_version=5
 
 config/name="InfiniteLap"
 run/main_scene="res://Playground/Playground.tscn"
-config/features=PackedStringArray("4.3", "Mobile")
+config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Main="*res://Playground/main.gd"
 
 [display]
 
@@ -24,7 +28,8 @@ window/stretch/mode="viewport"
 
 [global_group]
 
-Player=""
+obstacle=""
+player=""
 
 [input]
 
