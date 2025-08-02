@@ -5,7 +5,7 @@ extends CharacterBody2D  # Godot 4
 @onready var timer = $Timer
 @onready var healthbar = $CanvasLayer/Health
 
-var speed := 200.0  # constant target speed
+var speed := 300.0  # constant target speed
 var accel := 600.0
 var turn_speed := 3.0
 var friction := 600.0

@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 			for child in node.get_children():
 				if child is TileMapLayer:
 					child.collision_enabled = true
-		elif (node is TileMapLayer) or (node is CharacterBody2D) or (node is Sprite2D) or node.name == "lights":
+		elif (node is TileMapLayer) or (node is CharacterBody2D) or (node is Sprite2D):
 			pass
 		else:
 			node.hide()
