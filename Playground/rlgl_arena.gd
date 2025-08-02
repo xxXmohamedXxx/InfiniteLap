@@ -31,5 +31,6 @@ func _on_entered_arena():
 	timer.start()
 
 func _process(delta):
-	if state == "rl" and player.velocity.length() >= 10:
-		player.health -= 50
+	if player:
+		if state == "rl" and player.velocity.length() >= 10:
+			player.health -= 50

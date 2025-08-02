@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dwvxsaawdduy2"]
 
-[ext_resource type="Script" path="res://Danger/Spikes.gd" id="1_vb2xp"]
+[ext_resource type="Script" uid="uid://b2ayyfapno201" path="res://Danger/Spikes.gd" id="1_vb2xp"]
 [ext_resource type="Texture2D" uid="uid://bjqabpswqgpmq" path="res://Danger/Assets/floor_spikes_anim_f0.png" id="2_2f500"]
 [ext_resource type="Texture2D" uid="uid://by3353iegkwjd" path="res://Danger/Assets/floor_spikes_anim_f1.png" id="3_n0bmv"]
 [ext_resource type="Texture2D" uid="uid://cenh6phmgtt0h" path="res://Danger/Assets/floor_spikes_anim_f2.png" id="4_1uo5n"]
@@ -85,8 +85,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vaiux"]
 _data = {
-"RESET": SubResource("Animation_q8fym"),
-"spikes": SubResource("Animation_lnbiw")
+&"RESET": SubResource("Animation_q8fym"),
+&"spikes": SubResource("Animation_lnbiw")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ih50i"]

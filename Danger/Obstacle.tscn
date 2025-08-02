@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://w0ojjlpelfq4"]
-
-[ext_resource type="Script" uid="uid://c675eswt6g1gi" path="res://Danger/obstacle.gd" id="1_ledpl"]
-
-[node name="Obstacle" type="Area2D"]
-script = ExtResource("1_ledpl")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
