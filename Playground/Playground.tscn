@@ -34,7 +34,7 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_ktyxk")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5fldu"]
-size = Vector2(2432, 192)
+size = Vector2(2432, 319)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tirgj"]
 animations = [{
@@ -50,7 +50,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_kr4j5")
 }],
-"loop": true,
+"loop": false,
 "name": &"red",
 "speed": 0.0
 }]
@@ -76,82 +76,84 @@ position = Vector2(2144, -1776)
 script = ExtResource("5_npcc0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RLGL arena"]
+position = Vector2(0, 63.5)
 shape = SubResource("RectangleShape2D_5fldu")
 debug_color = Color(0.54, 0, 0.54, 0)
 
 [node name="Timer" type="Timer" parent="RLGL arena"]
 wait_time = 2.0
+autostart = true
 
-[node name="Node2D" type="Node2D" parent="RLGL arena"]
+[node name="lights" type="Node2D" parent="RLGL arena"]
 position = Vector2(-2144, 1776)
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="RLGL arena/Node2D"]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="RLGL arena/lights"]
 position = Vector2(3344, -1904)
 scale = Vector2(2.1, 2.1)
 sprite_frames = SubResource("SpriteFrames_tirgj")
 animation = &"green"
 
-[node name="Sprite2D2" type="AnimatedSprite2D" parent="RLGL arena/Node2D"]
+[node name="Sprite2D2" type="AnimatedSprite2D" parent="RLGL arena/lights"]
 position = Vector2(3184, -1904)
 scale = Vector2(2.1, 2.1)
 sprite_frames = SubResource("SpriteFrames_tirgj")
 animation = &"green"
 
-[node name="Sprite2D3" type="AnimatedSprite2D" parent="RLGL arena/Node2D"]
+[node name="Sprite2D3" type="AnimatedSprite2D" parent="RLGL arena/lights"]
 position = Vector2(3056, -1904)
 scale = Vector2(2.1, 2.1)
 sprite_frames = SubResource("SpriteFrames_tirgj")
 animation = &"green"
 
-[node name="Sprite2D4" type="AnimatedSprite2D" parent="RLGL arena/Node2D"]
+[node name="Sprite2D4" type="AnimatedSprite2D" parent="RLGL arena/lights"]
 position = Vector2(2928, -1904)
 scale = Vector2(2.1, 2.1)
 sprite_frames = SubResource("SpriteFrames_tirgj")
 animation = &"green"
 
-[node name="Sprite2D5" type="AnimatedSprite2D" parent="RLGL arena/Node2D"]
+[node name="Sprite2D5" type="AnimatedSprite2D" parent="RLGL arena/lights"]
 position = Vector2(2800, -1904)
 scale = Vector2(2.1, 2.1)
 sprite_frames = SubResource("SpriteFrames_tirgj")
 animation = &"green"
 
-[node name="Sprite2D6" type="AnimatedSprite2D" parent="RLGL arena/Node2D"]
+[node name="Sprite2D6" type="AnimatedSprite2D" parent="RLGL arena/lights"]
 position = Vector2(2688, -1904)
 scale = Vector2(2.1, 2.1)
 sprite_frames = SubResource("SpriteFrames_tirgj")
 animation = &"green"
 
-[node name="Sprite2D7" type="AnimatedSprite2D" parent="RLGL arena/Node2D"]
+[node name="Sprite2D7" type="AnimatedSprite2D" parent="RLGL arena/lights"]
 position = Vector2(2544, -1904)
 scale = Vector2(2.1, 2.1)
 sprite_frames = SubResource("SpriteFrames_tirgj")
 animation = &"green"
 
-[node name="Sprite2D8" type="AnimatedSprite2D" parent="RLGL arena/Node2D"]
+[node name="Sprite2D8" type="AnimatedSprite2D" parent="RLGL arena/lights"]
 position = Vector2(2400, -1904)
 scale = Vector2(2.1, 2.1)
 sprite_frames = SubResource("SpriteFrames_tirgj")
 animation = &"green"
 
-[node name="Sprite2D9" type="AnimatedSprite2D" parent="RLGL arena/Node2D"]
+[node name="Sprite2D9" type="AnimatedSprite2D" parent="RLGL arena/lights"]
 position = Vector2(2224, -1904)
 scale = Vector2(2.1, 2.1)
 sprite_frames = SubResource("SpriteFrames_tirgj")
 animation = &"green"
 
-[node name="Sprite2D10" type="AnimatedSprite2D" parent="RLGL arena/Node2D"]
+[node name="Sprite2D10" type="AnimatedSprite2D" parent="RLGL arena/lights"]
 position = Vector2(2064, -1904)
 scale = Vector2(2.1, 2.1)
 sprite_frames = SubResource("SpriteFrames_tirgj")
 animation = &"green"
 
-[node name="Sprite2D11" type="AnimatedSprite2D" parent="RLGL arena/Node2D"]
+[node name="Sprite2D11" type="AnimatedSprite2D" parent="RLGL arena/lights"]
 position = Vector2(1888, -1904)
 scale = Vector2(2.1, 2.1)
 sprite_frames = SubResource("SpriteFrames_tirgj")
 animation = &"green"
 
-[node name="Sprite2D12" type="AnimatedSprite2D" parent="RLGL arena/Node2D"]
+[node name="Sprite2D12" type="AnimatedSprite2D" parent="RLGL arena/lights"]
 position = Vector2(1712, -1904)
 scale = Vector2(2.1, 2.1)
 sprite_frames = SubResource("SpriteFrames_tirgj")
@@ -184,15 +186,15 @@ tile_map_data = PackedByteArray("AAD5//r/AAAAAAAAAAD5//v/AAAAAAAAAAD5//z/AAAAAAA
 [node name="obstacles1" parent="6" instance=ExtResource("2_5b4uv")]
 
 [node name="Player" parent="." instance=ExtResource("1_qvws0")]
-position = Vector2(-144, 96)
+position = Vector2(-150, 105)
 
-[node name="checkpoint" type="Area2D" parent="." groups=["Player"]]
+[node name="checkpoint" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="checkpoint"]
 position = Vector2(-336, 43)
 shape = SubResource("RectangleShape2D_c70v7")
 
 [connection signal="body_entered" from="RLGL arena" to="RLGL arena" method="_on_body_entered"]
-[connection signal="entered_arena" from="RLGL arena" to="RLGL arena" method="_on_entered_arena"]
+[connection signal="body_exited" from="RLGL arena" to="RLGL arena" method="_on_body_exited"]
 [connection signal="timeout" from="RLGL arena/Timer" to="RLGL arena" method="_on_timer_timeout"]
 [connection signal="body_entered" from="checkpoint" to="." method="_on_checkpoint_body_entered"]
